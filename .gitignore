@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+#### Visual Studio files
+
+
+*.pyproj
+*.sln
+*.vs
+*.md
+*.pyperf
