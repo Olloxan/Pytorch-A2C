@@ -102,6 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
 #### Visual Studio files
 
 
@@ -110,3 +111,5 @@ venv.bak/
 *.vs
 *.md
 *.pyperf
+=======
+>>>>>>> eb7c1e21bba2c8b05f0bb1bfd5701ab73adf10be
