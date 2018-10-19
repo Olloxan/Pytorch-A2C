@@ -9,9 +9,9 @@ https://github.com/higgsfield/Imagination-Augmented-Agents
 
 requiered Libraries:
 
--Pytorch 0.4.1 or higher
--Torchvision
--gym
+* Pytorch 0.4.1 or higher
+* Torchvision
+* gym
 
 To start the training of the agent, run A2C_training_pacman.py. To see the result, run PlayPacman.py. 
 
