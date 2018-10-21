@@ -50,13 +50,14 @@ class ActorCritic(OnPolicy):
             nn.ReLU(),
         )
         
+        fc_size = 256
         self.fc = nn.Sequential(
-            nn.Linear(self.feature_size(), 256),
+            nn.Linear(self.feature_size(), fc_size),
             nn.ReLU(),
         )
-        
-        self.critic  = nn.Linear(256, 1)
-        self.actor   = nn.Linear(256, num_actions)
+                
+        self.critic  = nn.Linear(fc_size, 1)
+        self.actor   = nn.Linear(fc_size, num_actions)
         
     def forward(self, x):            
         x = self.features(x)        
@@ -69,7 +70,7 @@ class ActorCritic(OnPolicy):
     def feature_size(self):       
         convoutput1 = self.calculate_conv_output(self.in_shape[1:3], self.out_channels, 3)       
         convoutput2 = self.calculate_conv_output(convoutput1[1:3], self.out_channels, 3, 2)
-        features = np.prod(convoutput2)
+        features = int(np.prod(convoutput2))
         return features
 
     def calculate_conv_output(self, img_dim, out_channels, kernel_size, stride=1, padding=0):        

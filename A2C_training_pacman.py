@@ -139,7 +139,7 @@ if __name__ == '__main__':
         rollout.after_update()
         
     #Saving the model!
-    torch.save(actor_critic.state_dict(), "Data/agents/actor_critic_" + mode)
+    torch.save(actor_critic.state_dict(), "actor_critic_" + mode)
     print("Model saved")
 
     
