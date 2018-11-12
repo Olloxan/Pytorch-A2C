@@ -38,7 +38,7 @@ def displayImage(image, step, reward, value):
 env = MiniPacman(mode=mode, frame_cap=1000)
 
 # load model
-agentPath = "actor_critic_" + mode
+agentPath = "actor_critic_pacman_" + mode
 actor_critic = ActorCritic(env.observation_space.shape, env.action_space.n)
 pretrained_dict = torch.load(agentPath)
 actor_critic.load_state_dict(pretrained_dict)
