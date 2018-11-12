@@ -17,7 +17,7 @@ timer = myTimer()
 
 
 USE_CUDA = torch.cuda.is_available()
-num_envs = 2
+num_envs = 32
 
 logger = Logger()
 
@@ -45,7 +45,7 @@ if __name__ == '__main__': # important for windows systems if subprocesses are r
     value_loss_coef = 0.5
     max_grad_norm = 0.5
     num_steps = 10
-    num_frames = 200#int(1e6)
+    num_frames = int(1e6)
     
 
     #Init a2c and rmsprop   
