@@ -19,7 +19,7 @@ USE_CUDA = torch.cuda.is_available()
 
 MODES = ('regular', 'avoid', 'hunt', 'ambush', 'rush')
 mode = MODES[0]
-num_envs = 2
+num_envs = 16
 
 def make_env():   
     def _thunk():
@@ -135,12 +135,12 @@ if __name__ == '__main__':
             print('epoch %s. reward: %s' % (i_update, np.mean(all_rewards[-10:])))            
             print('loss %s' % all_losses[-1])
             logger.printDayFormat("estimated time to run: ", estimatedtimetogo)
-            print("---------------------------")                        
+            print("######## AC_Pacman_{0} ########".format(mode))                        
         rollout.after_update()
         
-    #Saving the model!
-    torch.save(actor_critic.state_dict(), "actor_critic_" + mode)
-    print("Model saved")
+    logger.log(all_rewards, "Data/", "all_rewards_{0}.txt".format(mode))  
+    logger.log(all_losses, "Data/", "all_losses_{0}.txt".format(mode))      
+    logger.log_state_dict(actor_critic.state_dict(), "Data/actor_critic_{0}".format(mode))    
 
     
 
