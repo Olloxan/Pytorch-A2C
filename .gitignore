@@ -105,6 +105,7 @@ venv.bak/
 
 #### Visual Studio files
 
+Data/
 
 *.pyproj
 *.sln
