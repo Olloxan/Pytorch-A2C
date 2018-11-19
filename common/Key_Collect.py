@@ -162,6 +162,9 @@ class Key_Collect():
     def has_player_no_key(self):
         return self.player_state == self.player_not_all_keys
 
+    def has_player_key(self):
+        return self.player_state == self.player_has_key
+
     def is_player_in_goal(self, player_pos):
         return self.env[player_pos[0]][player_pos[1]] == self.player_in_goal
     
@@ -182,7 +185,7 @@ class Key_Collect():
     def check_if_done(self):        
         max_steps_reached = self.frame > self.max_steps
         player_pos = self.convert_pos(np.where(self.env > 3))        
-        game_won = self.is_player_in_goal(player_pos) and self.player_state == 1
+        game_won = self.is_player_in_goal(player_pos) and self.has_player_key()
         return max_steps_reached or game_won
 
     def render(self):
