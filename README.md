@@ -24,7 +24,7 @@ about MiniPacman environment.
 
 To start the training of the agent, run A2C_training_pacman.py. To see the result, run PlayPacman.py. 
 
-The training method of this A2C is n-Step training. The advatage of n-Step training is that no target networks are reqiered. To 
+The training method of this A2C is n-Step training. To 
 prevent the agent from overfitting, at least 16 environments should be used to guarantee enough variation of training data. If a
 different environment with more sparce rewards is used, the number of environments should be increased.
 
